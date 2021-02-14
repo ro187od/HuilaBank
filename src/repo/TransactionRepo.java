@@ -2,17 +2,19 @@ package repo;
 
 import entity.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TransactionRepo {
 
     private List<Transaction> transactions;
 
-    public TransactionRepo() {
-    }
-
     public TransactionRepo(List<Transaction> transactions) {
         this.transactions = transactions;
+    }
+
+    public TransactionRepo(){
+        this.transactions = new ArrayList<>();
     }
 
     public void addTransaction(Transaction transaction) {

@@ -16,6 +16,14 @@ public class TransactionTime {
         }
     }
 
+    public void setStartTime(Calendar startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(Calendar endTime) {
+        this.endTime = endTime;
+    }
+
     public boolean isInside(TransactionTime transactionTime) {
         return transactionTime.startTime.before(startTime) &&
                 transactionTime.endTime.after(endTime);

@@ -3,17 +3,17 @@ package entity;
 // id cardholder_name cardholder_surname start_time end_time amount type_of_payment
 public class Transaction {
 
-    private Long id;
+    private Id id;
     private CardHolder cardHolder;
     private TransactionTime time;
     private Amount amount;
     private String typeOfPayment;
 
-    public void setId(Long id) {
+    public void setId(Id id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public Id getId() {
         return this.id;
     }
 
@@ -49,5 +49,9 @@ public class Transaction {
         this.typeOfPayment = typeOfPayment;
     }
 
-
+    @Override
+    public String toString() {
+        return id.getId() + "." + " " + cardHolder.getName() + " " + cardHolder.getSurname() +
+                " " + amount.getNumberAmount() + amount.getCurrency();
+    }
 }
